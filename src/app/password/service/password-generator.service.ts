@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {BehaviorSubject} from 'rxjs';
+import {BehaviorSubject, Observable} from 'rxjs';
 import {Password} from '../model/Password';
 
 @Injectable({
@@ -14,9 +14,13 @@ export class PasswordGeneratorService {
 
     public generatePassword(lowercase: boolean, uppercase: boolean, numbers: boolean, symbols: boolean, chars: number): void {
 
-        const fakeString = Math.random().toString(36); // fake, to be changed
+        const fakeString = Math.random().toString(chars); // fake, to be changed
         const newPassword = new Password(fakeString);
 
         this._currentPassword$.next(newPassword);
+    }
+
+    public getCurrentPassword(): Observable<Password> {
+        return this._currentPassword$.asObservable();
     }
 }
