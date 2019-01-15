@@ -29,7 +29,7 @@ export class InputViewComponent implements OnInit, OnDestroy {
 
     // test method
     testGeneratePassword() {
-        this.passwordGeneratorService.generatePassword(true, true, true, true, 20);
+        this.passwordGeneratorService.generatePassword(true, true, true, true, 25);
     }
 
 }
