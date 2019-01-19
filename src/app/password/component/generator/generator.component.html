@@ -1,58 +1,54 @@
-<form>
+<div class="row">
+    <div class="col-sm-12">
+        <h2>Password Generator</h2>
+    </div>
+</div>
 
-    <div class="row">
-        <div class="col-sm-12">
-            <h2>Password Generator</h2>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="form-group">
+            <label for="inputView"></label>
+            <input id="inputView" class="form-control" #inputView/>
         </div>
     </div>
+</div>
 
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="form-group">
-                <label for="inputView"></label>
-                <input id="inputView" class="form-control" #inputView/>
-            </div>
+<div class="row">
+    <div class="col-sm-8">
+        <div class="form-check">
+            <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" [(ngModel)]="lowercase" (change)="onOptionsChange()">
+                lowercase
+            </label>
         </div>
+
+        <div class="form-check">
+            <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" [(ngModel)]="uppercase" (change)="onOptionsChange()">
+                uppercase
+            </label>
+        </div>
+
+
+        <div class="form-check">
+            <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" [(ngModel)]="numbers" (change)="onOptionsChange()">
+                numbers
+            </label>
+        </div>
+
+        <div class="form-check">
+            <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" [(ngModel)]="symbols" (change)="onOptionsChange()">
+                symbols
+            </label>
+        </div>
+
     </div>
 
-    <div class="row">
-        <div class="col-sm-8">
-            <div class="form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" type="checkbox" (change)="onOptionsChange()" #lowercaseCheck>
-                    lowercase
-                </label>
-            </div>
-
-            <div class="form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" type="checkbox" (change)="onOptionsChange()" #uppercaseCheck>
-                    uppercase
-                </label>
-            </div>
-
-
-            <div class="form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" type="checkbox" (change)="onOptionsChange()" #numbersCheck>
-                    numbers
-                </label>
-            </div>
-
-            <div class="form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" type="checkbox" (change)="onOptionsChange()" #symbolsCheck>
-                    symbols
-                </label>
-            </div>
-
-        </div>
-
-
-        <div class="col-sm-4">
-            <label for="passwordLength"></label>
-            <input type="range" min="5" max="50" step="1" class="custom-range" id="passwordLength" (input)="onOptionsChange()" #lengthInput>
-        </div>
+    <div class="col-sm-4">
+        <label for="passwordLength"></label>
+        <input type="range" min="5" max="60" step="1" [(ngModel)]="length" class="custom-range" id="passwordLength" (input)="onOptionsChange()">
     </div>
 
-</form>
+</div>

@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnDestroy, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, Input, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {Observable, Subscription} from 'rxjs';
 import {Password} from '../../model/Password';
 import {PasswordGeneratorService} from '../../service/password-generator.service';
@@ -10,22 +10,31 @@ import {PasswordGeneratorService} from '../../service/password-generator.service
 })
 export class GeneratorComponent implements OnInit, OnDestroy {
 
-    @ViewChild('inputView') inputViewRef: ElementRef;
-    @ViewChild('lowercaseCheck') lowercaseCheckRef: ElementRef;
-    @ViewChild('uppercaseCheck') uppercaseCheckRef: ElementRef;
-    @ViewChild('numbersCheck') numbersCheckRef: ElementRef;
-    @ViewChild('symbolsCheck') symbolsCheckRef: ElementRef;
-    @ViewChild('lengthInput') lengthInputRef: ElementRef;
+    // options with default values
+    lowercase: boolean = true;
+    uppercase: boolean = true;
+    numbers: boolean = true;
+    symbols: boolean = false;
+    length: number = 20;
+
     passwordSubscription: Subscription;
+    @ViewChild('inputView') inputViewRef: ElementRef;
 
     constructor(private passwordGeneratorService: PasswordGeneratorService) {
     }
 
     ngOnInit(): void {
+
+        // subscribe on Observable<Password>
         this.passwordSubscription = this.passwordGeneratorService.getCurrentPassword()
             .subscribe((password: Password) => {
                 this.inputViewRef.nativeElement.value = password.plain;
+
+                console.log(password); // TODO remove for production
             });
+
+        // trigger change to generate first Password
+        this.onOptionsChange();
     }
 
     ngOnDestroy(): void {
@@ -34,11 +43,11 @@ export class GeneratorComponent implements OnInit, OnDestroy {
 
     onOptionsChange(): void {
         this.passwordGeneratorService.generatePassword(
-            this.lowercaseCheckRef.nativeElement.checked,
-            this.uppercaseCheckRef.nativeElement.checked,
-            this.numbersCheckRef.nativeElement.checked,
-            this.symbolsCheckRef.nativeElement.checked,
-            Number(this.lengthInputRef.nativeElement.value)
+            this.lowercase,
+            this.uppercase,
+            this.numbers,
+            this.symbols,
+            Number(this.length)
         );
     }
 }
