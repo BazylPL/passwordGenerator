@@ -1,14 +1,14 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {PasswordGeneratorService} from './service/password-generator.service';
-import { InputViewComponent } from './component/input-view/input-view.component';
+import {GeneratorComponent} from './component/generator/generator.component';
 
 @NgModule({
-    declarations: [InputViewComponent],
+    declarations: [GeneratorComponent],
     imports: [
         CommonModule
     ],
-    exports: [InputViewComponent],
+    exports: [GeneratorComponent],
     providers: [PasswordGeneratorService]
 })
 export class PasswordModule {
