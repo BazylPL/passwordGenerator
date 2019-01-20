@@ -8,8 +8,13 @@
     <div class="col-sm-12">
         <div class="form-group">
             <label for="inputView"></label>
-            <input id="inputView" class="form-control" #inputView/>
+            <input id="inputView" class="form-control" [value]="password.plain"/>
         </div>
+    </div>
+    <div class="col-sm-12">
+        <div>MD5: {{password.md5}}</div>
+        <div>SHA256: {{password.sha256}}</div>
+        <div>SHA512: {{password.sha512}}</div>
     </div>
 </div>
 
@@ -48,7 +53,8 @@
 
     <div class="col-sm-4">
         <label for="passwordLength"></label>
-        <input type="range" min="5" max="60" step="1" [(ngModel)]="length" class="custom-range" id="passwordLength" (input)="onOptionsChange()">
+        <input type="range" class="custom-range" min="{{lengthMin}}" max="{{lengthMax}}" step="{{lengthStep}}"
+               [(ngModel)]="length" id="passwordLength" (input)="onOptionsChange()">
     </div>
 
 </div>

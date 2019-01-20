@@ -1,5 +1,5 @@
-import {Component, ElementRef, Input, OnDestroy, OnInit, ViewChild} from '@angular/core';
-import {Observable, Subscription} from 'rxjs';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Subscription} from 'rxjs';
 import {Password} from '../../model/Password';
 import {PasswordGeneratorService} from '../../service/password-generator.service';
 
@@ -10,27 +10,28 @@ import {PasswordGeneratorService} from '../../service/password-generator.service
 })
 export class GeneratorComponent implements OnInit, OnDestroy {
 
+    password: Password;
+    passwordSubscription: Subscription;
+
     // options with default values
     lowercase: boolean = true;
     uppercase: boolean = true;
     numbers: boolean = true;
     symbols: boolean = false;
     length: number = 20;
+    lengthMin: number = 5;
+    lengthMax: number = 60;
+    lengthStep: number = 1;
 
-    passwordSubscription: Subscription;
-    @ViewChild('inputView') inputViewRef: ElementRef;
 
     constructor(private passwordGeneratorService: PasswordGeneratorService) {
     }
 
     ngOnInit(): void {
-
         // subscribe on Observable<Password>
         this.passwordSubscription = this.passwordGeneratorService.getCurrentPassword()
             .subscribe((password: Password) => {
-                this.inputViewRef.nativeElement.value = password.plain;
-
-                console.log(password); // TODO remove for production
+                this.password = password;
             });
 
         // trigger change to generate first Password
