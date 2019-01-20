@@ -6,7 +6,7 @@ import {PasswordGeneratorService} from '../../service/password-generator.service
 @Component({
     selector: 'pg-generator',
     templateUrl: './generator.component.html',
-    styles: []
+    styleUrls: ['./generator.component.scss']
 })
 export class GeneratorComponent implements OnInit, OnDestroy {
 
@@ -18,7 +18,7 @@ export class GeneratorComponent implements OnInit, OnDestroy {
     uppercase: boolean = true;
     numbers: boolean = true;
     symbols: boolean = false;
-    length: number = 20;
+    length: number = 25;
     lengthMin: number = 5;
     lengthMax: number = 60;
     lengthStep: number = 1;

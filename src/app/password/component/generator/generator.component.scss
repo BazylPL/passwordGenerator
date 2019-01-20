@@ -1,0 +1,20 @@
+#inputView {
+  padding: 0 30px;
+  font-size: 25px;
+  line-height: 2.6;
+  height: auto;
+  box-shadow: 0 -2px 20px 0 rgba(0, 0, 0, 0.15);
+}
+
+.generatorOptions {
+  background-color: #ffffff;
+  padding: 30px;
+  box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+  font-size: 18px;
+}
+
+.generatorOptions .form-check {
+  margin: 0 0 15px;
+  padding-left: 0;
+}
