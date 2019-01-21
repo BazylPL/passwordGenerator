@@ -1,4 +1,6 @@
 @import "~bootstrap/scss/bootstrap.scss";
+@import "vars";
+
 
 body {
   background-color: #00576f;
@@ -9,6 +11,8 @@ body {
     max-width: 1060px;
   }
 }
+
+
 
 
 /* CUSTOM CHECKBOXES */
@@ -53,7 +57,7 @@ body {
 
 /* When the checkbox is checked, add a blue background */
 .checkbox-container input:checked ~ .checkmark {
-  background-color: #02a334;
+  background-color: $orange-color;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
@@ -107,7 +111,7 @@ body {
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  background: #02a334;
+  background: $orange-color;
   cursor: pointer;
 }
 
@@ -115,6 +119,6 @@ body {
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  background: #02a334;
+  background: $orange-color;
   cursor: pointer;
 }
