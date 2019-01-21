@@ -57,7 +57,7 @@ body {
 
 /* When the checkbox is checked, add a blue background */
 .checkbox-container input:checked ~ .checkmark {
-  background-color: $orange-color;
+  background-color: $green-color;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
@@ -111,7 +111,7 @@ body {
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  background: $orange-color;
+  background: $green-color;
   cursor: pointer;
 }
 
@@ -119,6 +119,6 @@ body {
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  background: $orange-color;
+  background: $green-color;
   cursor: pointer;
 }

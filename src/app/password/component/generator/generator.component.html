@@ -14,9 +14,10 @@
 
 <div class="generatorOptions">
     <div class="row">
-        <div class="col-sm-8">
-            <div class="form-check">
+        <div class="col-sm-7">
+            <h6>Use characters:</h6>
 
+            <div class="form-check">
                 <label class="checkbox-container"> lowercase <span class="exampleLabel">(e.g. abcdef)</span>
                     <input type="checkbox" [(ngModel)]="lowercase" (change)="onOptionsChange()">
                     <span class="checkmark"></span>
@@ -48,13 +49,23 @@
 
         </div>
 
-        <div class="col-sm-4">
-            
-            <div class="custom-range-slider">
-                <label for="passwordLength"></label>
-                <input type="range" class="slider" min="{{lengthMin}}" max="{{lengthMax}}" step="{{lengthStep}}"
-                       [(ngModel)]="length" id="passwordLength" (input)="onOptionsChange()">
+        <div class="col-sm-5">
+
+            <h6>Length:</h6>
+
+            <div class="rangeWrapper">
+
+                <span class="lengthInputWrapper">
+                    <input type="text" [(ngModel)]="length"/>
+                </span>
+
+                <span class="lengthSliderWrapper custom-range-slider">
+                    <label for="passwordLength"></label>
+                    <input type="range" class="slider" min="{{lengthMin}}" max="{{lengthMax}}" step="{{lengthStep}}"
+                           [(ngModel)]="length" id="passwordLength" (input)="onOptionsChange()">
+                 </span>
             </div>
+
         </div>
 
     </div>

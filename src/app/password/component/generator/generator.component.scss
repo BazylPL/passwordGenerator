@@ -14,6 +14,16 @@
   font-size: 18px;
 }
 
+.generatorOptions h6{
+  color: #495057;
+  margin-bottom: 20px;
+  font-size: 21px;
+}
+
+.generatorOptions .checkbox-container{
+  font-size: 18px;
+}
+
 .generatorOptions .form-check {
   margin: 0 0 15px;
   padding-left: 0;
@@ -28,3 +38,27 @@
   color: #7a7a7a;
   margin-left: 2px;
 }
+
+
+.generatorOptions .rangeWrapper {
+  display: flex;
+}
+
+.generatorOptions .lengthInputWrapper {
+  width: 70px;
+  margin-right: 20px;
+}
+
+.generatorOptions .lengthSliderWrapper {
+  width: 100%;
+  padding-top: 8px
+}
+
+.generatorOptions .lengthInputWrapper input {
+  width: 100%;
+  line-height: 2;
+  text-align: center;
+  font-size: 18px;
+  pointer-events: none;
+}
+
