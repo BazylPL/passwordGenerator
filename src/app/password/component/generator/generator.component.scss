@@ -1,3 +1,6 @@
+@import "../../../../vars";
+
+
 #inputView {
   padding: 0 30px;
   font-size: 25px;
@@ -15,7 +18,7 @@
 }
 
 .generatorOptions h6{
-  color: #495057;
+  color: $base-dark-gray-color;
   margin-bottom: 20px;
   font-size: 21px;
 }
@@ -62,3 +65,15 @@
   pointer-events: none;
 }
 
+.inputViewButtons{
+  position: absolute;
+  top: 45px;
+  right: 25px;
+  display: inline-block;
+}
+.inputViewButtons i{
+  font-size: 30px;
+  color: $base-dark-gray-color;
+  margin-left: 6px;
+  cursor: pointer;
+}

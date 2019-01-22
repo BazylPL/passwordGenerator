@@ -13,8 +13,6 @@ body {
 }
 
 
-
-
 /* CUSTOM CHECKBOXES */
 
 /* Customize the label (the container) */
@@ -43,7 +41,7 @@ body {
 /* Create a custom checkbox */
 .checkmark {
   position: absolute;
-  top: 2px;
+  top: 0px;
   left: 0;
   height: 25px;
   width: 25px;
@@ -121,4 +119,13 @@ body {
   border-radius: 50%;
   background: $green-color;
   cursor: pointer;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
 }

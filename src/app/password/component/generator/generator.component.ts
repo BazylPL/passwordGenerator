@@ -51,4 +51,8 @@ export class GeneratorComponent implements OnInit, OnDestroy {
             Number(this.length)
         );
     }
+
+    onPasswordCopy(): void {
+        console.log('coping here');
+    }
 }
