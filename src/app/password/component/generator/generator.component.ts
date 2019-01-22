@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, ElementRef, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {Subscription} from 'rxjs';
 import {Password} from '../../model/Password';
 import {PasswordGeneratorService} from '../../service/password-generator.service';
@@ -22,7 +22,6 @@ export class GeneratorComponent implements OnInit, OnDestroy {
     lengthMin: number = 5;
     lengthMax: number = 60;
     lengthStep: number = 1;
-
 
     constructor(private passwordGeneratorService: PasswordGeneratorService) {
     }
@@ -52,7 +51,8 @@ export class GeneratorComponent implements OnInit, OnDestroy {
         );
     }
 
-    onPasswordCopy(): void {
-        console.log('coping here');
+    onPasswordCopy(inputView: HTMLInputElement): void {
+        inputView.select();
+        document.execCommand('copy');
     }
 }

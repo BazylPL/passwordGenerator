@@ -1,12 +1,13 @@
 <div class="row">
     <div class="col-sm-12">
-        <div class="form-group noselect">
+        <div class="form-group noselect inputViewWrapper">
             <label for="inputView"></label>
             <span class="inputViewButtons">
-                <i class="material-icons" (click)="onPasswordCopy()">save_alt</i>
-                <i class="material-icons" (click)="onOptionsChange()">refresh</i>
+                <i class="material-icons" data-balloon="Copy" data-balloon-pos="up" (click)="onPasswordCopy(inputView)">save_alt</i>
+                <i class="material-icons" data-balloon="Refresh" data-balloon-pos="up" (click)="onOptionsChange()">refresh</i>
             </span>
-            <input id="inputView" class="form-control" spellcheck="false" [value]="password.plain"/>
+            <input id="inputView" readonly class="form-control" spellcheck="false" [value]="password.plain" #inputView/>
+            <div class="strengthBar"></div>
         </div>
     </div>
     <!--<div class="col-sm-12">-->

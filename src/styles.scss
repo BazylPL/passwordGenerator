@@ -1,5 +1,6 @@
 @import "~bootstrap/scss/bootstrap.scss";
 @import "vars";
+@import "~balloon-css";
 
 
 body {
@@ -128,4 +129,8 @@ body {
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+}
+
+.form-control:disabled, .form-control[readonly]{
+  background-color: #ffffff;
 }
