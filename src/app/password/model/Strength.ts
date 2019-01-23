@@ -1,7 +1,7 @@
 export enum Strength {
+    VeryBad,
     Weak,
     Sufficient,
-    Good,
-    Great,
+    VeryGood,
     Unbelievable
 }

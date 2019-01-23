@@ -54,36 +54,37 @@ export class Password {
     }
 
     get strengthName(): string {
-        return Password.strengthNames()[this.strength];
+        this._strengthName = Password.strengthNames()[this.strength];
+        return this._strengthName;
     }
 
     static strengthNames(): Array<string> {
         let strNames = [];
-        strNames[Strength.Weak] = 'Very weak';
+        strNames[Strength.VeryBad] = 'Very Bad';
+        strNames[Strength.Weak] = 'Could be better';
         strNames[Strength.Sufficient] = 'Sufficient';
-        strNames[Strength.Good] = 'Good';
-        strNames[Strength.Great] = 'Great!';
+        strNames[Strength.VeryGood] = 'Very good!';
         strNames[Strength.Unbelievable] = 'Unbelievable!';
         return strNames;
     }
 
     private computePasswordStrength(): void {
         let score = this.getPasswordStrengthScore();
-        this._strength = Strength.Weak;
+        this._strength = Strength.VeryBad;
 
-        if (score > 50) {
+        if (score > 50.5) {
+            this._strength = Strength.Weak;
+        }
+
+        if (score > 95.5) {
             this._strength = Strength.Sufficient;
         }
 
-        if (score > 95) {
-            this._strength = Strength.Good;
+        if (score > 145.5) {
+            this._strength = Strength.VeryGood;
         }
 
-        if (score > 145) {
-            this._strength = Strength.Great;
-        }
-
-        if (score > 225) {
+        if (score > 225.5) {
             this._strength = Strength.Unbelievable;
         }
     }

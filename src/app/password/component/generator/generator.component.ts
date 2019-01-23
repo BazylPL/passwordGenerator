@@ -18,7 +18,7 @@ export class GeneratorComponent implements OnInit, OnDestroy {
     uppercase: boolean = true;
     numbers: boolean = true;
     symbols: boolean = true;
-    length: number = 25;
+    length: number = 30;
     lengthMin: number = 3;
     lengthMax: number = 60;
     lengthStep: number = 1;

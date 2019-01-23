@@ -5,11 +5,13 @@
 }
 
 #inputView {
-  padding: 0 90px 15px 30px;
+  padding: 0 90px 20px 30px;
   font-size: 25px;
   line-height: 2.9;
   height: auto;
   box-shadow: 0 -2px 20px 0 rgba(0, 0, 0, 0.15);
+  border: 0;
+  border-radius: 0.25rem 0.25rem 0 0;
 }
 
 .inputViewWrapper .strengthBar {
@@ -23,8 +25,8 @@
 .inputViewWrapper .strengthBar .strengthLabel {
   position: absolute;
   left: 30px;
-  bottom: 1px;
-  font-size: 12px;
+  bottom: 0;
+  font-size: 13px;
   font-weight: 600;
   color: #ffffff;
 }
@@ -47,12 +49,12 @@
 
 .inputViewWrapper .strengthBar .strengthInner.strength1 {
   width: 40%;
-  background-color: #ff9900;
+  background-color: $orange-color;
 }
 
 .inputViewWrapper .strengthBar .strengthInner.strength2 {
   width: 60%;
-  background-color: #b4ff00;
+  background-color: #3cff81;
 }
 
 .inputViewWrapper .strengthBar .strengthInner.strength3 {
@@ -70,7 +72,7 @@
   background-color: #ffffff;
   padding: 30px;
   box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);
-  border-radius: 3px;
+  border-radius: 0 0 0.25rem 0.25rem;
   font-size: 18px;
 }
 
@@ -78,6 +80,7 @@
   color: $base-dark-gray-color;
   margin-bottom: 20px;
   font-size: 21px;
+  font-weight: 600;
 }
 
 .generatorOptions .checkbox-container {
@@ -124,7 +127,7 @@
 
 .inputViewWrapper .inputViewButtons {
   position: absolute;
-  top: 58px;
+  top: 47px;
   right: 25px;
   display: inline-block;
 }
