@@ -19,7 +19,7 @@ export class GeneratorComponent implements OnInit, OnDestroy {
     numbers: boolean = true;
     symbols: boolean = true;
     length: number = 25;
-    lengthMin: number = 5;
+    lengthMin: number = 3;
     lengthMax: number = 60;
     lengthStep: number = 1;
 

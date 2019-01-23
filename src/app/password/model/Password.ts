@@ -10,6 +10,8 @@ export class Password {
     _sha256: string;
     _sha512: string;
     _strength: Strength;
+    _strengthName: string;
+
 
     constructor(plain: string) {
         this.plain = plain;
@@ -20,13 +22,13 @@ export class Password {
     set plain(newPlain: string) {
         this._plain = newPlain;
 
+        // set password Strength
+        this.computePasswordStrength();
+
         // regenerate and set hashed values
         this._md5 = md5(this._plain);
         this._sha256 = sha256(this._plain);
         this._sha512 = sha512(this._plain);
-
-        // set password Strength
-        this.computePasswordStrength();
     }
 
     // Getters
@@ -51,25 +53,38 @@ export class Password {
         return this._strength;
     }
 
+    get strengthName(): string {
+        return Password.strengthNames()[this.strength];
+    }
+
+    static strengthNames(): Array<string> {
+        let strNames = [];
+        strNames[Strength.Weak] = 'Very weak';
+        strNames[Strength.Sufficient] = 'Sufficient';
+        strNames[Strength.Good] = 'Good';
+        strNames[Strength.Great] = 'Great!';
+        strNames[Strength.Unbelievable] = 'Unbelievable!';
+        return strNames;
+    }
+
     private computePasswordStrength(): void {
         let score = this.getPasswordStrengthScore();
+        this._strength = Strength.Weak;
 
-        this._strength = Strength.Poor;
-
-        if (score > 30) {
+        if (score > 50) {
             this._strength = Strength.Sufficient;
         }
 
-        if (score > 60) {
+        if (score > 95) {
             this._strength = Strength.Good;
         }
 
-        if (score > 100) {
+        if (score > 145) {
             this._strength = Strength.Great;
         }
 
-        if (score > 160) {
-            this._strength = Strength.TheBest;
+        if (score > 225) {
+            this._strength = Strength.Unbelievable;
         }
     }
 
@@ -97,7 +112,6 @@ export class Password {
         }
 
         score += (variationCount - 1) * 10;
-
         return score;
     }
 
