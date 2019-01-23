@@ -8,7 +8,7 @@
             </span>
             <input id="inputView" readonly class="form-control" spellcheck="false" [value]="password.plain" #inputView/>
             <div class="strengthBar">
-                <div class="strengthInner"></div>
+                <div class="strengthInner strength{{password.strength}}"></div>
             </div>
         </div>
     </div>

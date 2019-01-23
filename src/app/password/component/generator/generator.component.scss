@@ -12,7 +12,7 @@
   box-shadow: 0 -2px 20px 0 rgba(0, 0, 0, 0.15);
 }
 
-.inputViewWrapper .strengthBar{
+.inputViewWrapper .strengthBar {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -20,10 +20,36 @@
   height: 10px;
 }
 
-.inputViewWrapper .strengthBar .strengthInner{
+.inputViewWrapper .strengthBar .strengthInner {
   height: 100%;
-  width: 50%;
-  background-color: $green-color;
+  width: 0;
+  -webkit-transition: width 1s;
+  transition: width 1s;
+}
+
+.inputViewWrapper .strengthBar .strengthInner.strength0 {
+  width: 20%;
+  background-color: #ff0000;
+}
+
+.inputViewWrapper .strengthBar .strengthInner.strength1 {
+  width: 40%;
+  background-color: #ff9900;
+}
+
+.inputViewWrapper .strengthBar .strengthInner.strength2 {
+  width: 60%;
+  background-color: #fff700;
+}
+
+.inputViewWrapper .strengthBar .strengthInner.strength3 {
+  width: 80%;
+  background-color: #7aff00;
+}
+
+.inputViewWrapper .strengthBar .strengthInner.strength4 {
+  width: 100%;
+  background-color: #33ff00;
 }
 
 
@@ -35,13 +61,13 @@
   font-size: 18px;
 }
 
-.generatorOptions h6{
+.generatorOptions h6 {
   color: $base-dark-gray-color;
   margin-bottom: 20px;
   font-size: 21px;
 }
 
-.generatorOptions .checkbox-container{
+.generatorOptions .checkbox-container {
   font-size: 18px;
 }
 
@@ -83,13 +109,14 @@
   pointer-events: none;
 }
 
-.inputViewButtons{
+.inputViewButtons {
   position: absolute;
   top: 45px;
   right: 25px;
   display: inline-block;
 }
-.inputViewButtons i{
+
+.inputViewButtons i {
   font-size: 30px;
   color: $base-dark-gray-color;
   margin-left: 6px;
