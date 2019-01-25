@@ -41,7 +41,7 @@ export class GeneratorComponent implements OnInit, OnDestroy {
         this.passwordSubscription.unsubscribe();
     }
 
-    onOptionsChange(): void {
+    onOptionsChange($event?: Event): void {
         this.passwordGeneratorService.generatePassword(
             this.lowercase,
             this.uppercase,

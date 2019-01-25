@@ -1,4 +1,4 @@
-@import "../vars";
+@import "../assets/styles/vars";
 
 .pageHeader {
   margin: 25px 0 20px 0;
@@ -26,3 +26,10 @@
   margin-left: -5px;
 }
 
+
+.footer {
+  margin-top: 10px;
+  color: #b9b9b9;
+  text-align: right;
+  font-size: 12px;
+}

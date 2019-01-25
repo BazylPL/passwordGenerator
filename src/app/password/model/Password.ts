@@ -60,10 +60,10 @@ export class Password {
 
     static strengthNames(): Array<string> {
         let strNames = [];
-        strNames[Strength.VeryBad] = 'Very Bad';
+        strNames[Strength.VeryBad] = 'Very weak';
         strNames[Strength.Weak] = 'Could be better';
         strNames[Strength.Sufficient] = 'Sufficient';
-        strNames[Strength.VeryGood] = 'Very good!';
+        strNames[Strength.VeryGood] = 'Very good';
         strNames[Strength.Unbelievable] = 'Unbelievable!';
         return strNames;
     }
