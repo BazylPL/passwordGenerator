@@ -1,6 +1,6 @@
 @import "../assets/styles/vars";
 
-.pageHeader {
+header {
   margin: 25px 0 20px 0;
   color: #fff;
   font-size: 22px;
@@ -9,26 +9,26 @@
   pointer-events: none;
 }
 
-.pageHeader .headerIcon {
+header .headerIcon {
   display: inline-block;
   float: left;
   color: $orange-color;
 }
 
-.pageHeader .headerLabel {
+header .headerLabel {
   display: inline-block;
   float: left;
   margin-left: 12px;
   margin-top: 10px;
 }
 
-.pageHeader .headerIcon .material-icons {
+header .headerIcon .material-icons {
   font-size: 50px;
   margin-left: -5px;
 }
 
 
-.footer {
+footer {
   margin-top: 10px;
   color: #dcdcdc;
   text-align: right;
@@ -36,11 +36,11 @@
 }
 
 @media (min-width: 768px) {
-  .pageHeader {
+  header {
     font-size: 35px;
   }
 
-  .pageHeader .headerLabel {
+  header .headerLabel {
     margin-top: 0;
   }
 }
