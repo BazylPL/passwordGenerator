@@ -15,21 +15,21 @@
 }
 
 body {
-  background-color: #00576f;
+  background: #00576f;
+  background: -webkit-linear-gradient(to right, #00576f, #3191ab);
+  background: linear-gradient(to right, #00576f, #3191ab);
   font-family: 'Roboto', sans-serif;
 }
 
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1060px;
-  }
+.container {
+  min-width: 360px;
 }
 
 .material-icons {
   font-family: 'Material Icons';
   font-weight: normal;
   font-style: normal;
-  font-size: 24px;  /* Preferred icon size */
+  font-size: 24px; /* Preferred icon size */
   display: inline-block;
   line-height: 1;
   text-transform: none;
@@ -168,6 +168,13 @@ body {
   user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
 }
 
-.form-control:disabled, .form-control[readonly]{
+.form-control:disabled, .form-control[readonly] {
   background-color: #ffffff;
+}
+
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1060px;
+  }
 }

@@ -5,8 +5,8 @@
 }
 
 #inputView {
-  padding: 0 90px 20px 30px;
-  font-size: 25px;
+  padding: 0 100px 15px 15px;
+  font-size: 22px;
   line-height: 2.9;
   height: auto;
   box-shadow: 0 -2px 20px 0 rgba(0, 0, 0, 0.15);
@@ -24,10 +24,9 @@
 
 .inputViewWrapper .strengthBar .strengthLabel {
   position: absolute;
-  left: 30px;
+  left: 15px;
   bottom: 0;
   font-size: 13px;
-  font-weight: 600;
   color: #ffffff;
 }
 
@@ -70,7 +69,7 @@
 
 .generatorOptions {
   background-color: #ffffff;
-  padding: 30px;
+  padding: 15px;
   box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);
   border-radius: 0 0 0.25rem 0.25rem;
   font-size: 18px;
@@ -79,12 +78,11 @@
 .generatorOptions h6 {
   color: $base-dark-gray-color;
   margin-bottom: 20px;
-  font-size: 21px;
-  font-weight: 600;
+  font-size: 17px;
 }
 
 .generatorOptions .checkbox-container {
-  font-size: 18px;
+  font-size: 17px;
 }
 
 .generatorOptions .form-check {
@@ -102,6 +100,9 @@
   margin-left: 2px;
 }
 
+.generatorOptions .lengthWrapper {
+  margin-top: 30px;
+}
 
 .generatorOptions .rangeWrapper {
   display: flex;
@@ -121,13 +122,13 @@
   width: 100%;
   line-height: 2;
   text-align: center;
-  font-size: 18px;
+  font-size: 17px;
   pointer-events: none;
 }
 
 .inputViewWrapper .inputViewButtons {
   position: absolute;
-  top: 47px;
+  top: 41px;
   right: 25px;
   display: inline-block;
 }
@@ -137,4 +138,35 @@
   color: $base-dark-gray-color;
   margin-left: 6px;
   cursor: pointer;
+}
+
+
+@media (min-width: 576px) {
+  #inputView {
+    padding: 0 90px 15px 30px;
+  }
+
+  .inputViewWrapper .strengthBar .strengthLabel {
+    left: 30px;
+  }
+
+  .generatorOptions {
+    padding: 30px;
+  }
+}
+
+
+@media (min-width: 768px) {
+  .generatorOptions .lengthWrapper {
+    margin-top: 0;
+  }
+
+  #inputView {
+    font-size: 25px;
+  }
+
+  .inputViewWrapper .inputViewButtons {
+    top: 47px;
+  }
+
 }

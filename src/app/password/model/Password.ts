@@ -62,7 +62,7 @@ export class Password {
         let strNames = [];
         strNames[Strength.VeryBad] = 'Very weak';
         strNames[Strength.Weak] = 'Could be better';
-        strNames[Strength.Sufficient] = 'Sufficient';
+        strNames[Strength.GoodEnough] = 'Good enough';
         strNames[Strength.VeryGood] = 'Very good';
         strNames[Strength.Unbelievable] = 'Unbelievable!';
         return strNames;
@@ -77,7 +77,7 @@ export class Password {
         }
 
         if (score > 95.5) {
-            this._strength = Strength.Sufficient;
+            this._strength = Strength.GoodEnough;
         }
 
         if (score > 145.5) {
